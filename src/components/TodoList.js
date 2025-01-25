@@ -7,7 +7,7 @@ export default function TodoList({ todos, handleComplete }) {
         {todos.map((todo, index) => (
           <li key={index}>
             {todo.task}
-            {todo.status ? (
+            {todo.completed ? (
               ""
             ) : (
               <button
