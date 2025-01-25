@@ -4,19 +4,24 @@ import TodoList from "./TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([
-    { id: 1, task: 'Learn React', completed: false },
-    { id: 2, task: 'Build a Todo App', completed: false },
-    { id: 3, task: 'Deploy to Heroku', completed: false },
+    { id: 1, task: "Learn React", completed: false },
+    { id: 2, task: "Build a Todo App", completed: false },
+    { id: 3, task: "Deploy to Heroku", completed: false },
   ]);
 
-  function handleComplete(index) {
+  function handleComplete(id) {
     // console.log("hitting", index);
-    setTodos((prevTodos) => {
-      const updateTodos = [...prevTodos];
-      updateTodos[index].completed = true;
-      return updateTodos;
-    });
+    // setTodos((prevTodos) => {
+    //   const updateTodos = [...prevTodos];
+    //   updateTodos[index].completed = true;
+    //   return updateTodos;
+    // });
     // console.log(todos[index].status);
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => {
+        return todo.id === id ? { ...todo, completed: true } : todo;
+      })
+    );
   }
 
   return (
