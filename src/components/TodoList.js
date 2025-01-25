@@ -11,11 +11,13 @@ export default function TodoList({ todos, handleComplete }) {
               ""
             ) : (
               <button
+                id="complete"
+                className="complete"
                 onClick={() => {
                   handleComplete(index);
                 }}
               >
-                Complete
+                complete
               </button>
             )}
           </li>
